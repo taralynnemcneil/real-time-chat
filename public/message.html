@@ -1,0 +1,24 @@
+<!-- 
+    use ng-switch directive to listen to the value of info.type,
+show different content according to its value.
+i.e. when info.type = "welcome", create one dom node, delete the two div below
+-->
+
+<div ><!-- code here -->
+    <!-- welcome message -->
+    <div class="system-notification" ng-switch-when="welcome"><strong>System:&nbsp;&nbsp;</strong><span>{{ }}</span> Enters Chat Room
+    </div>
+    <!-- leaving notification -->
+    <div class="system-notification" ng-switch-when="bye"><strong>System:&nbsp;&nbsp;</strong>
+        <span>{{ }}</span> Left Chat Room</div>
+    <!-- chat message -->
+    <!-- 
+        in order to differentiate sent messages and received messages, you need to gieve the 
+    messages different style. to achieve this, use ng-class directive.
+        when self===infomfrom  returns true, use class self, else return class others
+    -->
+    <div class="normal-message" > <!-- code here -->
+        <div class="name-wrapper"><span>{{ }} @ </span><span>{{  }}</span></div>
+        <div class="content-wrapper"><span class="content">{{ }}</span><span class="avatar"></span></div>
+    </div>
+</div>
